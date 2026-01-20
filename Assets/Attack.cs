@@ -35,7 +35,6 @@ public class Attack : MonoBehaviour {
     void Update() {
         
         // get length of vector
-        Instantiate(bullet, this.transform.position, this.transform.rotation); //add this
         distanceToTarget = (target.transform.position - this.transform.position).magnitude;
         Debug.Log(distanceToTarget);
         // this is a very simple state machine to change the rocket's behavior
@@ -51,6 +50,7 @@ public class Attack : MonoBehaviour {
             this.transform.Translate(Vector3.up * flightSpeed); 
         } else { 
             this.transform.Translate(Vector3.up * flightSpeed); 
-        } 
+        }
+        Instantiate(bullet, this.transform.position, this.transform.rotation);
     }
 }
